@@ -9,7 +9,10 @@ import {
 import { config } from "./config.js";
 import { connectMongo } from "./db/mongo.js";
 import { ActivityEvent } from "./db/models/ActivityEvent.js";
-import { commands } from "./commands/ping.js";
+import { commands as pingCommands } from "./commands/ping.js";
+import { commands as statsCommands } from "./commands/stats.js";
+
+const commands = [...pingCommands, ...statsCommands];
 
 const client = new Client({
   intents: [
